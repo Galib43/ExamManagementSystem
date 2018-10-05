@@ -31,7 +31,7 @@ namespace ExamManagementSystem.Controllers
             bool isAdded = _batchManager.Add(batch);
             if (isAdded)
             {
-                return RedirectToAction("Entry");
+                return RedirectToAction("Index");
             }
 
             return View();

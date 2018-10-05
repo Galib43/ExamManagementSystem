@@ -125,6 +125,14 @@
     <Compile Include="Migrations\201809290944094_add_question_questionOption_Model.Designer.cs">
       <DependentUpon>201809290944094_add_question_questionOption_Model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810020717543_addedUserAccount_table.cs" />
+    <Compile Include="Migrations\201810020717543_addedUserAccount_table.Designer.cs">
+      <DependentUpon>201810020717543_addedUserAccount_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810020918248_added_compare_password_in_UserAccount.cs" />
+    <Compile Include="Migrations\201810020918248_added_compare_password_in_UserAccount.Designer.cs">
+      <DependentUpon>201810020918248_added_compare_password_in_UserAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -195,6 +203,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809290944094_add_question_questionOption_Model.resx">
       <DependentUpon>201809290944094_add_question_questionOption_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810020717543_addedUserAccount_table.resx">
+      <DependentUpon>201810020717543_addedUserAccount_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810020918248_added_compare_password_in_UserAccount.resx">
+      <DependentUpon>201810020918248_added_compare_password_in_UserAccount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -29,6 +29,7 @@ namespace ExamManagementSystem.Controllers
             return View(model);
         }
 
+        [HttpGet]
         public ActionResult Entry()
         {
             return View();

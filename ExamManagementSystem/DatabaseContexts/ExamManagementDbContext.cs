@@ -21,5 +21,8 @@ namespace DatabaseContexts
         public DbSet<ExamType> ExamTypes { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionOptions> QuestionOptionses { get; set; }
+
+
+        public DbSet<UserAcount> UserAcounts { get; set; }
     }
 }
