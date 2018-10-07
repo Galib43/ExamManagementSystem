@@ -18,6 +18,8 @@ namespace Models.SearchCriteria
         public string Outline { get; set; }
         public string Tag { get; set; }
 
+        public int DurationForm { get; set; }
+        public int DurationTO { get; set; }
         public int CreditForm { get; set; }
         public int CreditTo { get; set; }
 

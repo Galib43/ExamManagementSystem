@@ -27,7 +27,7 @@
                 <!-- Chat box -->
                 <div class="box box-success">
                     <div class="box-header">
-                        <h3 class="box-title">Batch Entry</h3>
+                        <h3 class="box-title">Participant Entry</h3>
                     </div>
                     <div class="box-body">
                         <!-- Form Start -->
@@ -106,7 +106,12 @@
                                         @Html.TextBoxFor(c => c.PostalCode, new { @class = "form-control", placeholder = "Postal Code" })
                                     </div>
                                 </div>
-                  
+                                @*<div class="form-group ">
+                    <label for="Image" class="col-md-2 control-label">Image</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(c => c.Image, new { type = "file", name = "Image" })
+                    </div>
+                </div>*@
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
                                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
@@ -125,9 +130,8 @@
     </section>
     <!-- /.content -->
 </div>
-@Session sceripts{
 <script src="~/Scripts/jquery-1.9.1.min.js"></script>
 <script src="~/Scripts/bootstrap.min.js"></script>
 <script src="~/Scripts/AppScript/ParticipantEntry/ParticipantDetail.js"></script>
-}
+
 

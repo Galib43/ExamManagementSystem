@@ -22,7 +22,7 @@ namespace Repository
        //login user
        public UserAcount Login(UserAcount userAcount)
        {
-            db.UserAcounts.FirstOrDefault(u => u.UserName == userAcount.UserName && u.Password == userAcount.Password);
+           db.UserAcounts.FirstOrDefault(u => u.UserName == userAcount.UserName && u.Password == userAcount.Password);
             db.SaveChanges();
            return userAcount;
        }

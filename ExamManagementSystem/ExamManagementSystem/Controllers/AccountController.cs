@@ -15,7 +15,8 @@ namespace ExamManagementSystem.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var GetAllLoginList = _userAccountManager.GetAll();
+            return View(GetAllLoginList);
         }
 
         public ActionResult Register()

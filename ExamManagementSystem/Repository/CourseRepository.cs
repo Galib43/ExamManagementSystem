@@ -80,10 +80,16 @@ namespace Repository
                 courses = courses.Where(c => c.Outline.ToLower().Contains(criteria.Outline.ToLower()));
             }
 
-            if (!string.IsNullOrEmpty(criteria.Outline))
+            if (!string.IsNullOrEmpty(criteria.Tag))
             {
-                courses = courses.Where(c => c.Outline.ToLower().Contains(criteria.Outline.ToLower()));
+                courses = courses.Where(c => c.Tag.ToLower().Contains(criteria.Tag.ToLower()));
             }
+
+            if (criteria.DurationForm > 0 && criteria.DurationTO > 0)
+            {
+                courses = courses.Where(c => c.Duration >= criteria.DurationForm && c.Duration <= criteria.DurationTO);
+            }
+
 
             if (criteria.CreditForm > 0 && criteria.CreditTo > 0)
             {
