@@ -94,6 +94,7 @@
     <Compile Include="ViewModels\OrganizationEntryVm.cs" />
     <Compile Include="ViewModels\ParticipantEntryVm.cs" />
     <Compile Include="ViewModels\TrainerEntryVm.cs" />
+    <Compile Include="ViewModels\UserAccountEntryVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -15,6 +15,8 @@ namespace Models
         public int Id { get; set; }
         [Display(Name = "Country Name")]
         public string Name { get; set; }
+
+        public bool isDelete { get; set; }
         public List<City> Cities { get; set; }
         public List<Trainer> Trainers { get; set; }
         public List<Participant> Participants { get; set; }

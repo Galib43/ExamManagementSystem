@@ -12,6 +12,7 @@ namespace Models
         public int Id { get; set; }
         [Display(Name = "Exam Type")]
         public string Name { get; set; }
+        public bool isDelete { get; set; }
         public List<Exam> Exams { get; set; }
     }
 }

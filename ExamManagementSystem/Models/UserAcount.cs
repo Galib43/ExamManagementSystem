@@ -27,5 +27,7 @@ namespace Models
        [DataType(DataType.Password)]
        public string ConfirmPassword { get; set; }
 
+       public bool isDelete { get; set; }
+
     }
 }

@@ -14,9 +14,9 @@ namespace BLL
 
 
        //login register Add
-       public UserAcount Add(UserAcount userAcount)
+       public bool Add(UserAcount userAcount)
        {
-           return _userAccountRepository.Add(userAcount);
+           return _userAccountRepository.RegisterAdd(userAcount);
        }
 
        //login
@@ -30,6 +30,24 @@ namespace BLL
        public List<UserAcount> GetAll()
        {
            return _userAccountRepository.GetAll();
-       } 
+       }
+
+       ///for update 
+       /// 
+       public bool Update(UserAcount userAcount)
+       {
+           return _userAccountRepository.Update(userAcount);
+       }
+
+       //for delete
+       public bool Delete(int id)
+       {
+         return _userAccountRepository.Delete(id);         
+       }
+
+       public UserAcount GetById(int id)
+       {
+           return _userAccountRepository.GetById(id);
+       }
     }
 }

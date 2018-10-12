@@ -42,6 +42,10 @@ namespace ExamManagementSystem
                 config.CreateMap<ExamEntryVm, Exam>();
                 config.CreateMap<Exam, ExamEntryVm>();
 
+                config.CreateMap<UserAccountEntryVm, UserAcount>();
+                config.CreateMap<UserAcount, UserAccountEntryVm>();
+
+             
 
             });
         }

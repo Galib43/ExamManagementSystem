@@ -133,6 +133,22 @@
     <Compile Include="Migrations\201810020918248_added_compare_password_in_UserAccount.Designer.cs">
       <DependentUpon>201810020918248_added_compare_password_in_UserAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810101506523_added_isdelete_in_UserAccount.cs" />
+    <Compile Include="Migrations\201810101506523_added_isdelete_in_UserAccount.Designer.cs">
+      <DependentUpon>201810101506523_added_isdelete_in_UserAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810121035554_added_isdelete_in_examType.cs" />
+    <Compile Include="Migrations\201810121035554_added_isdelete_in_examType.Designer.cs">
+      <DependentUpon>201810121035554_added_isdelete_in_examType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810121409246_added_isDelete_in_Country.cs" />
+    <Compile Include="Migrations\201810121409246_added_isDelete_in_Country.Designer.cs">
+      <DependentUpon>201810121409246_added_isDelete_in_Country.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810121520459_Added_isdelete_in_City.cs" />
+    <Compile Include="Migrations\201810121520459_Added_isdelete_in_City.Designer.cs">
+      <DependentUpon>201810121520459_Added_isdelete_in_City.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -209,6 +225,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810020918248_added_compare_password_in_UserAccount.resx">
       <DependentUpon>201810020918248_added_compare_password_in_UserAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810101506523_added_isdelete_in_UserAccount.resx">
+      <DependentUpon>201810101506523_added_isdelete_in_UserAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810121035554_added_isdelete_in_examType.resx">
+      <DependentUpon>201810121035554_added_isdelete_in_examType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810121409246_added_isDelete_in_Country.resx">
+      <DependentUpon>201810121409246_added_isDelete_in_Country.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810121520459_Added_isdelete_in_City.resx">
+      <DependentUpon>201810121520459_Added_isdelete_in_City.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

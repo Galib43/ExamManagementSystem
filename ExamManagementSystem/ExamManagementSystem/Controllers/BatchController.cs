@@ -15,6 +15,7 @@ namespace ExamManagementSystem.Controllers
     {
         BatchManager _batchManager = new BatchManager();
 
+       
         // GET: Entry Batch
         public ActionResult Entry()
         {
@@ -41,7 +42,7 @@ namespace ExamManagementSystem.Controllers
         public ActionResult Index(BatchSearchCriteria model)
         {
             var batch = _batchManager.GetBatchBySearch(model);
-            
+
 
 
             if (batch == null)
@@ -51,7 +52,7 @@ namespace ExamManagementSystem.Controllers
 
 
             model.ListOfBatch = batch;
-            
+
             return View(model);
         }
 
@@ -110,7 +111,7 @@ namespace ExamManagementSystem.Controllers
         private List<SelectListItem> GetOrganizationList()
         {
             return _batchManager.GetAllOrganization()
-                .Select(c => new SelectListItem(){Value = c.Id.ToString(), Text = c.Name}).ToList();
+                .Select(c => new SelectListItem() { Value = c.Id.ToString(), Text = c.Name }).ToList();
         }
 
 
@@ -133,6 +134,12 @@ namespace ExamManagementSystem.Controllers
             //return Json(data);
             return Json(data.Count);
         }
+
+
+
+
+
+
 
     }
 }

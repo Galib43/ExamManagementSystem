@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using BLL;
 using Models;
+using Models.ViewModels;
 
 namespace ExamManagementSystem.Controllers
 {
@@ -15,8 +17,10 @@ namespace ExamManagementSystem.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var GetAllLoginList = _userAccountManager.GetAll();
-            return View(GetAllLoginList);
+            var registers = _userAccountManager.GetAll();
+            return View(registers);
+
+
         }
 
         public ActionResult Register()
@@ -25,16 +29,18 @@ namespace ExamManagementSystem.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(UserAcount userAcount)
+        public ActionResult Register(UserAccountEntryVm model)
         {
             if (ModelState.IsValid)
             {
-                var Register = _userAccountManager.Add(userAcount);
-                if (Register !=null)
+                var userAccount = Mapper.Map<UserAcount>(model);
+                bool usr = _userAccountManager.Add(userAccount);
+                if (usr)
                 {
-                    ViewBag.msc = userAcount.FirstName + " " + userAcount.LastName + " " + "Successfully Registered";
+                   
                     ModelState.Clear();
-                    //return RedirectToAction("Index");
+                    ViewBag.msc = model.FirstName + " " + model.LastName + " " + "Successfully Registered";
+                    //return RedirectToAction("Login");
                 }
             }
             return View();
@@ -46,29 +52,35 @@ namespace ExamManagementSystem.Controllers
         }
 
         [HttpPost]
-
-        public ActionResult Login(UserAcount userAcount)
+        public ActionResult Login(UserAccountEntryVm model)
         
-{
-            var usr = _userAccountManager.Login(userAcount);
-            if (usr !=null)
-            {
-                Session["UserId"] = usr.UserId.ToString();
-                Session[" UserName"] = usr.UserName.ToString();
-                ViewBag.message = userAcount.FirstName + " " + userAcount.LastName + " " + "Successfully login";
-                ModelState.Clear();
+       {
 
-                //return RedirectToAction("LoggedIn");
-               
-            }
-            else
-            {
-                ModelState.AddModelError("","userName or Password is wrong");
-            }
+           var userAccount = Mapper.Map<UserAcount>(model);
+           var usr = _userAccountManager.Login(userAccount);
+                if (usr != null)
+                {
+                    Session["UserId"] = usr.UserId.ToString();
+                    Session[" UserName"] = usr.UserName.ToString();
+                    return RedirectToAction("LoggedIn");  
+                }
+                
+                else
+                {
+                    ViewBag.msc = "UserName or Password is wrong";
+                          
+                }
+            
+           
             return View();
         }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("loggedin", "Account");
+        }
 
-
+        //After login that time show
         public ActionResult LoggedIn()
         {
             if (Session["UserId"] != null)
@@ -80,5 +92,58 @@ namespace ExamManagementSystem.Controllers
                 return RedirectToAction("Login");
             }
         }
+
+        //Register delete 
+        public ActionResult Delete(int id)
+        {
+            if (id > 0)
+            {
+                bool isDelete = _userAccountManager.Delete(id);
+                if (isDelete)
+                {
+                    return RedirectToAction("Index");
+                }
+               
+            }
+            return View();
+        }
+        //Update Database
+
+        public ActionResult Edit(int id)
+        {
+            var userAccount = new UserAcount();
+
+            if (id > 0)
+            {
+                userAccount = _userAccountManager.GetById(id);
+
+                var model = Mapper.Map<UserAccountEntryVm>(userAccount);
+
+                return View(model);
+            }
+
+            return View();
+        }
+
+
+        //Update Account
+        [HttpPost]
+        public ActionResult Edit(UserAccountEntryVm model)
+        {
+            if (ModelState.IsValid)
+            {
+                var userAccount = Mapper.Map<UserAcount>(model);
+                bool isUpdate = _userAccountManager.Update(userAccount);
+                if (isUpdate)
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return View();
+        }
+
+
+       
     }
 }

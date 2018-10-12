@@ -1,8 +1,8 @@
-﻿
-@model Models.SearchCriteria.BatchSearchCriteria
+﻿@model Models.SearchCriteria.BatchSearchCriteria
 
 @{
     Layout = "~/Views/Share/_LayoutShare.cshtml";
+    ViewBag.Title = "Batch Search";
 }
 
 <div class="content-wrapper">
@@ -27,15 +27,15 @@
                 <!-- Chat box -->
                 <div class="box box-success">
                     <div class="box-header">
-                        <h3 class="box-title">Batch Entry</h3>
+                        <h3 class="box-title">Batch Index</h3>
                     </div>
                     <div class="box-body">
                         <!-- Form Start -->
                         <div class="container">
                             <h1>All Bathc Info</h1>
-                            <hr />
+                          
 
-                            @using (Html.BeginForm("Index", "Batch", FormMethod.Get, new { @class = "form-horizontal" }))
+                         @using (Html.BeginForm("Index", "Batch", FormMethod.Post, new { @class = "form-horizontal" }))
                             {
                                 <div class="row">
                                     <div class="col-md-6">
@@ -52,7 +52,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="StartDate" class="col-md-3 control-label">Start Date</label>
@@ -60,14 +59,12 @@
                                                 <input id="searchTextbox" name="StartDate" class="form-control" type="date" />
                                             </div>
                                         </div>
-
                                         <div class="form-group">
                                             <label for="EndDate" class="col-md-3 control-label">End Date</label>
                                             <div class="col-md-9">
                                                 <input id="searchTextbox" name="EndDate" class="form-control" type="date" disabled="disabled" />
                                             </div>
                                         </div>
-
                                         <div class="form-group">
                                             <div class="col-md-4 pull-right">
                                                 <input id="searchButton" type="submit" value="Search" class="btn-success form-control" />
@@ -76,7 +73,6 @@
                                     </div>
                                 </div>
                             }
-
                             <hr />
                             <p>
                                 @Html.ActionLink("Create New", "Entry")
@@ -90,18 +86,14 @@
                                         <th>
                                             @Html.DisplayNameFor(model => model.Name)
                                         </th>
-                                        @*<th>
-                            @Html.DisplayNameFor(model => model.Description)
-                        </th>*@
+                                       
                                         <th>
                                             @Html.DisplayNameFor(model => model.StartDate)
                                         </th>
                                         <th>
                                             @Html.DisplayNameFor(model => model.EndDate)
                                         </th>
-                                        @*<th>
-                            @Html.DisplayNameFor(model => model.OrganizationId)
-                        </th>*@
+                                      
                                         <th></th>
                                     </tr>
                                     @foreach (var item in Model.ListOfBatch)
@@ -113,18 +105,14 @@
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.Name)
                                             </td>
-                                            @*<td>
-                                @Html.DisplayFor(modelItem => item.Description)
-                            </td>*@
+                                           
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.StartDate)
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.EndDate)
                                             </td>
-                                            @*<td>
-                                @Html.DisplayFor(modelItem => item.OrganizationId)
-                            </td>*@
+                                          
                                             <td>
                                                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                                                 @*@Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
@@ -134,6 +122,7 @@
                                     }
                                 </table>
                             </div>
+
                         </div>
                         <!--Form Closed-->
                     </div>
