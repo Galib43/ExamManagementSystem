@@ -149,6 +149,10 @@
     <Compile Include="Migrations\201810121520459_Added_isdelete_in_City.Designer.cs">
       <DependentUpon>201810121520459_Added_isdelete_in_City.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810131105522_added_isDelete.cs" />
+    <Compile Include="Migrations\201810131105522_added_isDelete.Designer.cs">
+      <DependentUpon>201810131105522_added_isDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -237,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810121520459_Added_isdelete_in_City.resx">
       <DependentUpon>201810121520459_Added_isdelete_in_City.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810131105522_added_isDelete.resx">
+      <DependentUpon>201810131105522_added_isDelete.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

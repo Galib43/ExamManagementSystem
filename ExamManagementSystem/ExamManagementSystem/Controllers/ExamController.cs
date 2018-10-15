@@ -228,6 +228,7 @@ namespace ExamManagementSystem.Controllers
             return null;
         }
 
+       
 
         //Select Exam Type
         private List<SelectListItem> GetAllExamTypes()

@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BatchManager.cs" />
+    <Compile Include="CityManager.cs" />
+    <Compile Include="CountryManager.cs" />
     <Compile Include="CourseManager.cs" />
     <Compile Include="ExamManager.cs" />
     <Compile Include="ExamTypeManager.cs" />

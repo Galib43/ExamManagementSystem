@@ -95,6 +95,5 @@ namespace BLL
             return _examRepository.GetQuestionById(id);
         }
 
-
     }
 }

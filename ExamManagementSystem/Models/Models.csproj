@@ -80,6 +80,7 @@
     <Compile Include="Question.cs" />
     <Compile Include="QuestionOptions.cs" />
     <Compile Include="SearchCriteria\BatchSearchCriteria.cs" />
+    <Compile Include="SearchCriteria\CitySearchCriteria.cs" />
     <Compile Include="SearchCriteria\CourseSearchCriteria.cs" />
     <Compile Include="SearchCriteria\ExamSearchCriteria.cs" />
     <Compile Include="SearchCriteria\OrganizationSearchCriteria.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Trainer.cs" />
     <Compile Include="UserAcount.cs" />
     <Compile Include="ViewModels\BatchEntryVm.cs" />
+    <Compile Include="ViewModels\CityEntryVm.cs" />
     <Compile Include="ViewModels\CourseEntryVm.cs" />
     <Compile Include="ViewModels\ExamEntryVm.cs" />
     <Compile Include="ViewModels\OrganizationEntryVm.cs" />

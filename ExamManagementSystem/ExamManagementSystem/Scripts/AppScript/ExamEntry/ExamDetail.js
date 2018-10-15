@@ -141,7 +141,8 @@ $("#ExamTypeId").change(function () {
 
                     $("#ExamCode").empty();
                     $("#ExamCode").val('EXM-' + makeid() + (rData + 1));
-                } else {
+                }
+                else {
                     $("#ExamCode").val('EXM' + makeid() + (rData + 1));
                 }
             }

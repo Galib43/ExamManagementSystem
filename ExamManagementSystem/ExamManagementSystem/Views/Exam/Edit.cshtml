@@ -47,13 +47,13 @@
                                 <div class="form-group">
                                     <label for="ExamType" class="col-md-2 control-label">Exam Type</label>
                                     <div class="col-md-10">
-                                        @Html.DropDownListFor(c => c.ExamTypeId, Model.ExamTypeListItem, "Select Exam Type", new { @class = "form-control" })
+                                        @Html.DropDownListFor(c => c.ExamTypeId, Model.ExamTypeListItem, "Select Exam Type", new { @class = "form-control", id = "examTypeID" })
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="Code" class="col-md-2 control-label">Code</label>
                                     <div class="col-md-10">
-                                        @Html.TextBoxFor(c => c.Code, new { @class = "form-control", placeholder = "Code", @readonly = "readonly" })
+                                        @Html.TextBoxFor(c => c.Code, new { @class = "form-control", placeholder = "Code", id = "ExamId", @readonly = "readonly" })
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -86,10 +86,11 @@
     </section>
     <!-- /.content -->
 </div>
-<script src="~/Scripts/jquery-1.9.1.min.js"></script>
-<script src="~/Scripts/bootstrap.min.js"></script>
-<script src="~/Scripts/AppScript/ExamEntry/ExamDetail.js"></script>
 
+
+@section scripts{
+<script src="~/Scripts/AppScript/ExamEntry/Exam.js"></script>
+}
 
 
 

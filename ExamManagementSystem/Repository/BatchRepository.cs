@@ -38,12 +38,16 @@ namespace Repository
 
             IQueryable<Batch> batches = db.Batches.Where(c => c.IsDeleted == false).AsQueryable();
 
-            //if (model.CourseId > 0)
+            //if (!string.IsNullOrEmpty(model.Course.Name))
             //{
-            //    batches = batches.Where(c =>
-            //        c.CourseId.ToString().ToLower().Contains(model.CourseId.ToString().ToLower()));
+            //    batches = batches.Where(c => c.Course.Name.ToLower().Contains(model.Course.Name.ToLower()));
             //}
 
+            if (!string.IsNullOrEmpty(model.Description))
+            {
+                batches = batches.Where(
+                    c => c.Description.ToString().ToLower().Contains(model.Description.ToString().ToLower()));
+            }
             if (!string.IsNullOrEmpty(model.Name))
             {
                 batches = batches.Where(
@@ -55,10 +59,10 @@ namespace Repository
                 batches = batches.Where(c => c.StartDate >= model.StartDate);
             }
 
-            if (!string.IsNullOrEmpty(model.EndDate.ToString()))
-            {
-                batches = batches.Where(c => c.EndDate <= model.EndDate);
-            }
+            //if (!string.IsNullOrEmpty(model.EndDate.ToString()))
+            //{
+            //    batches = batches.Where(c => c.EndDate <= model.EndDate);
+            //}
             
 
             return batches.ToList();
