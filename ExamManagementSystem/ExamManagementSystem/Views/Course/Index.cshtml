@@ -29,13 +29,11 @@
                 <!-- Chat box -->
                 <div class="box box-success">
                     <div class="box-header">
-                        <h3 class="box-title">Batch Entry</h3>
+                        <h3 class="box-title">All Courses Information</h3>
                     </div>
                     <div class="box-body">
                         <!-- Form Start -->
-                        <div class="container">
-                            <h1 class="text-primary">All Courses Information</h1>
-                            <hr />
+                        
 
                             @using (Html.BeginForm("Index", "Course", FormMethod.Get, new { @class = "form-horizontal" }))
                             {
@@ -105,7 +103,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="col-md-4 pull-right">
+                                            <div class="col-md-3 pull-right">
                                                 <input id="searchButton" type="submit" value="Search" class="btn-success form-control" />
                                             </div>
                                         </div>
@@ -173,7 +171,7 @@
                         </div>
                         <!--Form Closed-->
                     </div>
-                </div>
+                
             </section>
         </div>
         <!-- /.row (main row) -->
