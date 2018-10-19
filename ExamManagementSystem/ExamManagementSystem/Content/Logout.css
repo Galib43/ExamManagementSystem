@@ -1,11 +1,12 @@
 
-.navbar-custom-menu>.navbar-nav>li>.dropdown-menu {
-    position: absolute;
-    right: 0;
-    /*left: auto;*/ 
-}
-.navbar-nav>.user-menu>.dropdown-menu>.user-footer {
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer {
     background-color: #f9f9f9;
     padding: 10px;
-    width: 100px;
+   
+}
+.navbar-custom-menu>.navbar-nav>li>.dropdown-menu {
+    position: absolute;
+    right: 0 ;
+    left: 0
+    
 }
