@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatabaseContexts;
 using Models;
+using Models.SearchCriteria;
 
 namespace Repository
 {
@@ -49,6 +50,19 @@ namespace Repository
        {
            var examType = db.ExamTypes.Where(ex => ex.isDelete == false);
            return examType.ToList();
+       }
+
+       public List<ExamType> GetExamTypeeBySearch(ExamTypeSearchCriteria model)
+       {
+           IQueryable<ExamType> examTypes = db.ExamTypes.Where(c => c.isDelete == false).AsQueryable();
+
+           if (!string.IsNullOrEmpty(model.Name))
+           {
+               examTypes = examTypes.Where(c => c.Name.ToLower().Contains(model.Name.ToLower()));
+           }
+
+           return examTypes.ToList();
+       
        }
     }
  

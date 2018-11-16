@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Models;
+using Models.SearchCriteria;
 
 namespace BLL
 {
@@ -34,6 +35,11 @@ namespace BLL
         public List<ExamType> GetAll()
         {
             return _examTypeRepository.GetAll();
-        } 
+        }
+
+        public List<ExamType> GetExamTypeeBySearch(ExamTypeSearchCriteria model)
+        {
+            return _examTypeRepository.GetExamTypeeBySearch(model);
+        }
     }
 }

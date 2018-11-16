@@ -81,8 +81,10 @@
     <Compile Include="QuestionOptions.cs" />
     <Compile Include="SearchCriteria\BatchSearchCriteria.cs" />
     <Compile Include="SearchCriteria\CitySearchCriteria.cs" />
+    <Compile Include="SearchCriteria\CountrySearchCriteria.cs" />
     <Compile Include="SearchCriteria\CourseSearchCriteria.cs" />
     <Compile Include="SearchCriteria\ExamSearchCriteria.cs" />
+    <Compile Include="SearchCriteria\ExamTypeSearchCriteria.cs" />
     <Compile Include="SearchCriteria\OrganizationSearchCriteria.cs" />
     <Compile Include="SearchCriteria\ParticipantSearchCriteria.cs" />
     <Compile Include="SearchCriteria\QuestionSearchCriteria.cs" />

@@ -6754,4 +6754,8 @@ button.close {
     display: none !important;
   }
 }
+
+.pull-right {
+     float: 0!important; 
+}
 /*# sourceMappingURL=bootstrap.css.map */

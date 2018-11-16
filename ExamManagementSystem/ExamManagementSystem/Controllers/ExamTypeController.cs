@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using BLL;
 using Models;
+using Models.SearchCriteria;
 
 namespace ExamManagementSystem.Controllers
 {
@@ -14,10 +15,19 @@ namespace ExamManagementSystem.Controllers
         ExamTypeManager _examTypeManager=new ExamTypeManager();
         //
         // GET: /ExamType/
-        public ActionResult Index()
+        public ActionResult Index(ExamTypeSearchCriteria model)
         {
-            var totalExamType = _examTypeManager.GetAll();
-            return View(totalExamType);
+            var examtypes = _examTypeManager.GetExamTypeeBySearch(model);
+
+            if (examtypes == null)
+            {
+                examtypes = new List<ExamType>();
+            }
+
+
+            model.ExamTypes = examtypes;
+            return View(model);
+
         }
 
         public ActionResult Entry()

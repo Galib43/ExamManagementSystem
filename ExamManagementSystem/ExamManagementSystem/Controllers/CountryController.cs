@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BLL;
 using Models;
+using Models.SearchCriteria;
 
 namespace ExamManagementSystem.Controllers
 {
@@ -12,10 +13,19 @@ namespace ExamManagementSystem.Controllers
     {
         CountryManager _countryManager=new CountryManager();
         // GET: /Country/
-        public ActionResult Index()
+        public ActionResult Index(CountrySearchCriteria model)
         {
-            var countries = _countryManager.GetAllCountry();
-            return View(countries);
+            var countries = _countryManager.GetCountryeBySearch(model);
+
+            if (countries == null)
+            {
+                countries = new List<Country>();
+            }
+
+
+            model.Countries = countries;
+            return View(model);
+
         }
         //GetEntry
         public ActionResult Entry()

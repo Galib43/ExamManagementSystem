@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Models;
+using Models.SearchCriteria;
 using Repository;
 
 namespace BLL
@@ -34,6 +35,12 @@ namespace BLL
        public List<Country> GetAllCountry()
        {
            return _countryRepository.GetAllCountry();
-       } 
+       }
+
+       public List<Country> GetCountryeBySearch(CountrySearchCriteria model)
+       {
+           List<Country> countries = _countryRepository.GetCountryeBySearch(model);
+           return countries;
+       }
     }
 }

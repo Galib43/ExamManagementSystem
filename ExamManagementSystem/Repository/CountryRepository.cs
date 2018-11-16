@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatabaseContexts;
 using Models;
+using Models.SearchCriteria;
 
 namespace Repository
 {
@@ -44,6 +45,19 @@ namespace Repository
        {
            var countries = db.Countries.Where(c => c.isDelete == false).ToList();
            return countries;
+       }
+
+       public List<Country> GetCountryeBySearch(CountrySearchCriteria model)
+       {
+           IQueryable<Country> countries = db.Countries.Where(c => c.isDelete == false).AsQueryable();
+
+           if (!string.IsNullOrEmpty(model.Name))
+           {
+               countries = countries.Where(c => c.Name.ToLower().Contains(model.Name.ToLower()));
+           }
+
+           return countries.ToList();
+          
        }
     }
 }
